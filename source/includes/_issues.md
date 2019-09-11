@@ -4,14 +4,14 @@
 
 ### Available Parameters
 
-| key      | type    | description                               |
+| Key      | Type    | Description                               |
 | -------- | ------- | ----------------------------------------- |
 | show_all | Boolean | If true - include completed/solved issues |
 | search   | String  | Search String                             |
 | page     | String  | Issues are paginated, 20 per page         |
 
 ```shell
-curl "https://api.sardynamics.com/issues?get_all=true&search=Lorem&page=1"
+curl "https://api.sardynamics.com/issues.json?get_all=true&search=Lorem&page=1"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
@@ -56,7 +56,7 @@ This endpoint retrieves all issues.
 
 ### HTTP Request
 
-`GET https://api.sardynamics.com/issues`
+`GET https://api.sardynamics.com/issues.json`
 
 ## Get a Specific Issue
 
@@ -88,7 +88,7 @@ This endpoint retrieves a specific issue.
 
 ### HTTP Request
 
-`GET http://example.com/issues/<ID>`
+`GET http://example.com/issues/<ID>.json`
 
 ### URL Parameters
 

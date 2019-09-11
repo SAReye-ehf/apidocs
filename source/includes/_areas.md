@@ -3,7 +3,7 @@
 ## Get All Areas
 
 ```shell
-curl "https://api.sardynamics.com/areas"
+curl "https://api.sardynamics.com/areas.json"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
@@ -46,12 +46,12 @@ This endpoint retrieves all areas.
 
 ### HTTP Request
 
-`GET https://api.sardynamics.com/areas`
+`GET https://api.sardynamics.com/areas.json`
 
 ## Get a Specific Area
 
 ```shell
-curl "https://api.sardynamics.com/areas/abbe0983-7b75-53df-bc32-009b79d2c61e"
+curl "https://api.sardynamics.com/areas/abbe0983-7b75-53df-bc32-009b79d2c61e.json"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
@@ -80,7 +80,7 @@ This endpoint retrieves a specific area.
 
 ### HTTP Request
 
-`GET http://example.com/areas/<ID>`
+`GET http://example.com/areas.json/<ID>`
 
 ### URL Parameters
 
@@ -91,7 +91,7 @@ This endpoint retrieves a specific area.
 ## Delete a Specific Area
 
 ```shell
-curl "https://api.sardynamics.com/areas/27522917-bb28-530e-979d-c4b77a335114"
+curl "https://api.sardynamics.com/areas/27522917-bb28-530e-979d-c4b77a335114.json"
   -X DELETE
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
