@@ -15,7 +15,7 @@ curl "https://api.sardynamics.com/issues.json?get_all=true&search=Lorem&page=1"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
-> The above command returns JSON structured like this:
+> The response to this request is a JSON object structured like this:
 
 ```json
 [
@@ -65,7 +65,7 @@ curl "https://api.sardynamics.com/issues/abbe0983-7b75-53df-bc32-009b79d2c61e"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
-> The above command returns JSON structured like this:
+> The response to this request is a JSON object structured like this:
 
 ```json
 {
@@ -124,7 +124,7 @@ curl "https://api.sardynamics.com/issues/abbe0983-7b75-53df-bc32-009b79d2c61e"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
-> The above command returns JSON structured like this:
+> The response to this request is a JSON object structured like this:
 
 ```json
 {

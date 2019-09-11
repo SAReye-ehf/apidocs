@@ -7,7 +7,7 @@ curl "https://api.sardynamics.com/areas.json"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
-> The above command returns JSON structured like this:
+> The response to this request is a JSON object structured like this:
 
 ```json
 [
@@ -55,7 +55,7 @@ curl "https://api.sardynamics.com/areas/abbe0983-7b75-53df-bc32-009b79d2c61e.jso
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
-> The above command returns JSON structured like this:
+> The response to this request is a JSON object structured like this:
 
 ```json
 {
@@ -75,8 +75,6 @@ curl "https://api.sardynamics.com/areas/abbe0983-7b75-53df-bc32-009b79d2c61e.jso
 ```
 
 This endpoint retrieves a specific area.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
