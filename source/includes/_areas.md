@@ -2,30 +2,9 @@
 
 ## Get All Areas
 
-```ruby
-require 'sareye'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.areas.get
-```
-
-```python
-import sareye
-
-api = sareye.authorize('meowmeowmeow')
-api.areas.get()
-```
-
 ```shell
-curl "http://example.com/api/areas"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const sareye = require("sareye");
-
-let api = sareye.authorize("meowmeowmeow");
-let areas = api.areas.get();
+curl "https://api.sardynamics.com/areas"
+  -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
 > The above command returns JSON structured like this:
@@ -33,18 +12,32 @@ let areas = api.areas.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "name": "01",
+    "created_at": "2017-10-25T13:07:15.275Z",
+    "updated_at": "2017-12-04T14:18:52.782Z",
+    "disabled": false,
+    "json": null,
+    "description": "",
+    "lat": "64 54.500",
+    "lng": "-22 52.500",
+    "zoom": 8,
+    "has_polygon": false,
+    "id": "73f9ea82-1dde-5636-a139-ee0822c26726",
+    "tenant_id": "ecaf17fa-df8b-51e9-b370-9963438b1fb3"
   },
   {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "name": "02",
+    "created_at": "2017-10-25T13:07:15.283Z",
+    "updated_at": "2017-12-04T14:19:08.239Z",
+    "disabled": false,
+    "json": null,
+    "description": "",
+    "lat": "65 32.000",
+    "lng": "-23 04.000",
+    "zoom": 8,
+    "has_polygon": false,
+    "id": "614ec74c-2749-541a-ab68-e8ccc3da2b26",
+    "tenant_id": "ecaf17fa-df8b-51e9-b370-9963438b1fb3"
   }
 ]
 ```
@@ -53,56 +46,31 @@ This endpoint retrieves all areas.
 
 ### HTTP Request
 
-`GET http://example.com/api/areas`
-
-### Query Parameters
-
-| Parameter    | Default | Description                                                                    |
-| ------------ | ------- | ------------------------------------------------------------------------------ |
-| include_cats | false   | If set to true, the result will also include cats.                             |
-| available    | true    | If set to false, the result will include areas that have already been adopted. |
-
-<aside class="success">
-Remember — a happy area is an authenticated area!
-</aside>
+`GET https://api.sardynamics.com/areas`
 
 ## Get a Specific Area
 
-```ruby
-require 'sareye'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.areas.get(2)
-```
-
-```python
-import sareye
-
-api = sareye.authorize('meowmeowmeow')
-api.areas.get(2)
-```
-
 ```shell
-curl "http://example.com/api/areas/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const sareye = require("sareye");
-
-let api = sareye.authorize("meowmeowmeow");
-let max = api.areas.get(2);
+curl "https://api.sardynamics.com/areas/abbe0983-7b75-53df-bc32-009b79d2c61e"
+  -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "name": "02",
+  "created_at": "2017-10-25T13:07:15.283Z",
+  "updated_at": "2017-12-04T14:19:08.239Z",
+  "disabled": false,
+  "json": null,
+  "description": "",
+  "lat": "65 32.000",
+  "lng": "-23 04.000",
+  "zoom": 8,
+  "has_polygon": false,
+  "id": "614ec74c-2749-541a-ab68-e8ccc3da2b26",
+  "tenant_id": "ecaf17fa-df8b-51e9-b370-9963438b1fb3"
 }
 ```
 
@@ -122,40 +90,10 @@ This endpoint retrieves a specific area.
 
 ## Delete a Specific Area
 
-```ruby
-require 'sareye'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.areas.delete(2)
-```
-
-```python
-import sareye
-
-api = sareye.authorize('meowmeowmeow')
-api.areas.delete(2)
-```
-
 ```shell
-curl "http://example.com/api/areas/2"
+curl "https://api.sardynamics.com/areas/27522917-bb28-530e-979d-c4b77a335114"
   -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const sareye = require("sareye");
-
-let api = sareye.authorize("meowmeowmeow");
-let max = api.areas.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted": ":("
-}
+  -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
 ```
 
 This endpoint deletes a specific area.

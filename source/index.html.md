@@ -3,16 +3,49 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://sareye.com'>Our website</a>
+  - <a href='https://sareye.sardynamics.com/demo_requests/new?mobile=0'>Contact us</a>
 
 includes:
   - areas
+  - checklists
+  - courses
+  - devices
+  - dispatch_groups
+  - dispatch_response_types
+  - dispatch_responses
+  - dispatches
+  - groups
+  - issue_types
+  - issues
+  - kinds
+  - leader_types
+  - leaders
+  - maintenances
+  - marker_types
+  - operation_logs
+  - operation_scales
+  - operation_types
+  - operation_view_history
+  - operations
+  - plans
+  - priorities
+  - resources
+  - risk_templates
+  - risks
+  - rounds
+  - surveys
+  - tags
+  - tasks
+  - trackers
+  - triage_location_types
+  - triage_status_types
+  - triages
+  - units
+  - users
   - errors
 
 search: true
@@ -26,9 +59,9 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 
 # Authentication
 
-SAReye uses API keys to allow access to the API. You can register a new API key at your [user setup page](http://api.sardynamics.com/users).
+SAReye uses API keys to allow access to the API. You can register for a new API key at your user setup page http://{your_tenants_subdomain}.sardynamics.com/users
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+SAReye expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e`
 
