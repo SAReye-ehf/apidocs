@@ -297,6 +297,11 @@
           </li>
           <li>
             <a href="#groups" class="toc-h1 toc-link" data-title="Groups">Groups</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-a-list-of-all-groups-for-a-given-operation" class="toc-h2 toc-link" data-title="Getting a list of all Groups for a given operation">Getting a list of all Groups for a given operation</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#issue-types" class="toc-h1 toc-link" data-title="Issue Types">Issue Types</a>
@@ -352,6 +357,11 @@
           </li>
           <li>
             <a href="#operation-logs" class="toc-h1 toc-link" data-title="Operation Logs">Operation Logs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-a-list-of-all-operation-logs" class="toc-h2 toc-link" data-title="Getting a list of all Operation Logs">Getting a list of all Operation Logs</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#operation-scales" class="toc-h1 toc-link" data-title="Operation Scales">Operation Scales</a>
@@ -436,6 +446,11 @@
           </li>
           <li>
             <a href="#tasks" class="toc-h1 toc-link" data-title="Tasks">Tasks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#getting-a-list-of-all-tasks" class="toc-h2 toc-link" data-title="Getting a list of all Tasks">Getting a list of all Tasks</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#trackers" class="toc-h1 toc-link" data-title="Trackers">Trackers</a>
@@ -447,9 +462,19 @@
           </li>
           <li>
             <a href="#triage-location-types" class="toc-h1 toc-link" data-title="Triage Location Types">Triage Location Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-triage-location-types" class="toc-h2 toc-link" data-title="Get All Triage Location Types">Get All Triage Location Types</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#triage-status-types" class="toc-h1 toc-link" data-title="Triage Status Types">Triage Status Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-triage-status-types" class="toc-h2 toc-link" data-title="Get All Triage Status Types">Get All Triage Status Types</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#triages" class="toc-h1 toc-link" data-title="Triages">Triages</a>
@@ -970,7 +995,196 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
     </span><span class="s2">"resources_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h1 id='groups'>Groups</h1><h1 id='issue-types'>Issue Types</h1><h2 id='get-all-issue-types'>Get All Issue Types</h2><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h1 id='groups'>Groups</h1><h2 id='getting-a-list-of-all-groups-for-a-given-operation'>Getting a list of all Groups for a given operation</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/groups.json?operation_id=:operation_id</code></p>
+
+<aside class="notice">
+You must replace <code>:operation_id</code> with the corresponding operation id.
+</aside>
+<h3 id='available-parameters'>Available Parameters</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>operation_id</td>
+<td>Integer</td>
+<td>Optional filter by operation</td>
+</tr>
+<tr>
+<td>include_attachments</td>
+<td>Boolean</td>
+<td>Return attachments in the response</td>
+</tr>
+<tr>
+<td>include_operation_lite</td>
+<td>Boolean</td>
+<td>Include operation name and id in the response</td>
+</tr>
+<tr>
+<td>include_resources</td>
+<td>Boolean</td>
+<td>Return resources in the response</td>
+</tr>
+<tr>
+<td>include_tasks</td>
+<td>Boolean</td>
+<td>Return tasks in the response</td>
+</tr>
+<tr>
+<td>hide_inactive_groups</td>
+<td>Boolean</td>
+<td>Hide inactive groups(default: false)</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>String</td>
+<td>Optional search query</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/operation_logs.json"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"users_active_group"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incident managers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T14:04:30.817Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T14:04:31.097Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"newest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"common_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"group_leader"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"extra"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number_of_vehicles"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"can_have_tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"operational"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tasks_j"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"attachments_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_resource_j"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo User"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T13:59:17.553Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T13:59:45.037Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 1234 1234"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"device_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{}"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ef906f9c-c1d3-4da7-801b-9bd192438962"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@sareye.com"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number_area_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tenant_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4245bd51-df24-47d4-b9e5-541add586eec"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8b8a9aa6-681f-4a98-9c8f-81d3ced87c09"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"inactive_unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emergency Headquarters"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"call_sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HQ"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"tenant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"custom_values"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a10e605f-4bb6-4c83-8fc3-eea25d3863f3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ef906f9c-c1d3-4da7-801b-9bd192438962"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd241c9d-38e6-4e44-8a0a-df53b9e3bb92"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d428602f-f854-4a8b-a259-bf0858a474cd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"group_leader_uuid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"group_leader_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Response group"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T14:01:09.513Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T14:03:12.834Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"newest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"common_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"group_leader"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"extra"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number_of_vehicles"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"can_have_tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"operational"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tasks_j"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"attachments_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator_resource_j"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1235678"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo User"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T13:59:17.553Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T13:59:45.037Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 1234 1234"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"device_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{}"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ef906f9c-c1d3-4da7-801b-9bd192438962"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example@sareye.com"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number_area_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tenant_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4245bd51-df24-47d4-b9e5-541add586eec"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8b8a9aa6-681f-4a98-9c8f-81d3ced87c09"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"inactive_unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emergency Headquarters"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"call_sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HQ"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"tenant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"custom_values"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"04f3be24-d054-44e2-84a7-ff87e6dadf00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ef906f9c-c1d3-4da7-801b-9bd192438962"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd241c9d-38e6-4e44-8a0a-df53b9e3bb92"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d428602f-f854-4a8b-a259-bf0858a474cd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"group_leader_uuid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"group_leader_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd241c9d-38e6-4e44-8a0a-df53b9e3bb92"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"active_groups_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_response_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-12T16:35:13.793+02:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"groups_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='issue-types'>Issue Types</h1><h2 id='get-all-issue-types'>Get All Issue Types</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.sardynamics.com/issue_types.json</code></p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/issue_types.json"</span>
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
@@ -1391,7 +1605,139 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
     </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ef906f9c-c1d3-4da7-801b-9bd192438962"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h1 id='operation-logs'>Operation Logs</h1><h1 id='operation-scales'>Operation Scales</h1><h2 id='get-all-operation-scales'>Get All Operation Scales</h2><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h1 id='operation-logs'>Operation Logs</h1><h2 id='getting-a-list-of-all-operation-logs'>Getting a list of all Operation Logs</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/operation_logs.json</code></p>
+<h3 id='available-parameters'>Available Parameters</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>operation_id</td>
+<td>Integer</td>
+<td>Optional filter by operation</td>
+</tr>
+<tr>
+<td>include_attachments</td>
+<td>Boolean</td>
+<td>Return attachments in the response</td>
+</tr>
+<tr>
+<td>include_operation_lite</td>
+<td>Boolean</td>
+<td>Include operation name and id in the response</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/operation_logs.json"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extent of damage"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"marked"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"filename"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-12T13:45:40.022Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-12T13:45:40.261Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"log_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-12T13:44:07.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pointtype"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timeline"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"show_on_map"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"movement"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"primary_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"primary_url_bitly"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"radius"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"user_j"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f8976e89-92ec-57be-8753-3036297723c3"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@gmail.com"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"tenant_j"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAReye"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"creator_resource_j"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345678"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-25T13:38:39.180Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-22T20:55:07.312Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1324567"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"device_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{}"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14f896cc-e19c-507c-9b30-24d4404b15db"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@sareye.com"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number_area_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+354"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tenant_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38c7bbea-5096-59be-97c4-5fa5c21ffc67"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0e292763-40f6-5a0b-a6aa-5befbba3830b"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b9c0670-5a5a-5e55-a452-a85fd2f2df0f"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"inactive_unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incident Command Center"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"call_sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ICC"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"tenant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAReye"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44a577f8-85b4-4f9f-8ad2-3cb86b983509"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"attachments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"decimal_lat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_lng"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_values"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fd68138f-8b64-48d2-9374-785b6f878ff6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe9b94bc-ac60-52a9-9183-9d31ac66738a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7f3dffc3-77c1-5210-8b84-241dec3241d8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"equipment_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"marker_type_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"109a1f1e-e067-485d-ab10-e0d361b3f216"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"task_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ff57a58a-4568-50b9-baa5-33641e08742f"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"include_picture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com/image.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-03T09:27:20.524Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com/small/image.png"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"creator_tenant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"theme_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ff9300"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_response_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-12T16:06:55.305+02:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"oplogs_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='operation-scales'>Operation Scales</h1><h2 id='get-all-operation-scales'>Get All Operation Scales</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.sardynamics.com/operation_scales.json</code></p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/operation_scales.json?page=1"</span>
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
@@ -1559,8 +1905,13 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 </tr>
 <tr>
 <td>take</td>
-<td>String</td>
+<td>Integer</td>
 <td>How many operations to fetch</td>
+</tr>
+<tr>
+<td>filter_operations</td>
+<td>String</td>
+<td>Search String</td>
 </tr>
 <tr>
 <td>category_id</td>
@@ -1579,17 +1930,17 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 </tr>
 <tr>
 <td>priority_id</td>
-<td> </td>
+<td>String</td>
 <td> </td>
 </tr>
 <tr>
 <td>regarding_id</td>
-<td> </td>
+<td>String</td>
 <td> </td>
 </tr>
 <tr>
 <td>scale_id</td>
-<td> </td>
+<td>String</td>
 <td> </td>
 </tr>
 <tr>
@@ -3529,7 +3880,188 @@ You must replace <code>:operation_id</code> with the corresponding operation id.
     </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#fffb00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h1 id='tasks'>Tasks</h1><h1 id='trackers'>Trackers</h1><h2 id='get-all-trackers'>Get All Trackers</h2><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h1 id='tasks'>Tasks</h1><h2 id='getting-a-list-of-all-tasks'>Getting a list of all Tasks</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/tasks.json</code></p>
+<h3 id='available-parameters'>Available Parameters</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>operation_id</td>
+<td>Integer</td>
+<td>Optional filter by operation</td>
+</tr>
+<tr>
+<td>include_attachments</td>
+<td>Boolean</td>
+<td>Return attachments in the response</td>
+</tr>
+<tr>
+<td>include_operation_lite</td>
+<td>Boolean</td>
+<td>Include operation name and id in the response</td>
+</tr>
+<tr>
+<td>include_groups</td>
+<td>Boolean</td>
+<td>Return groups in the response</td>
+</tr>
+<tr>
+<td>include_comments</td>
+<td>Boolean</td>
+<td>Return comments in the response</td>
+</tr>
+<tr>
+<td>last_response_timestamp</td>
+<td>DateTime</td>
+<td>Only fetch tasks updated/created after the given timestamp</td>
+</tr>
+<tr>
+<td>hide_finished_tasks</td>
+<td>Boolean</td>
+<td>Do not return finished tasks</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/tasks.json"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Search Camping areas near PLS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.524Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.524Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"operation_priority"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"task_priority"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1437d403-f22b-44b5-875d-f58aa9020ad5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fill_in_text"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T18:49:33.908Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T17:52:44.608Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rescuers"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"has_groups"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64 07.907"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-21 54.215"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pointtype"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reminder"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"solved"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"point_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"end_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"log_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_control_measure"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"solved_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"operation_logs_j"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"user_j"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"738d3640-3fbd-4a5e-aaeb-a085625af812"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@sareye.com"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555 0100"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"groups_j"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"attachments_count"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"search_area_j"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"117"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"searched"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T18:49:33.992Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T18:49:33.992Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"area_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5148"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"json"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polygon"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"center"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.131782706677</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-21.90358400344849</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"geoJSON"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Polygon"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.12665056872358</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-21.8873405456543</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.13079045015536</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-21.88382148742676</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.13313173896098</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-21.89811229705811</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.13498589968151</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-21.9104290008545</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.13691484463044</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-21.92334651947022</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"area_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5148"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"center_parsed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64 07.907"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-21 54.215"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"polyline_length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.6140"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14aa684e-3ffd-47f9-9c41-30163815522a"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d077ef-9eed-49d4-8001-75c36bbea675"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"task_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58d7035a-c4be-446c-a8ae-86cd9a38e0a1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sst_task"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64.131783333"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"decimal_lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-21.903583333"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"custom_values"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58d7035a-c4be-446c-a8ae-86cd9a38e0a1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_resource_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"creator_tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"marker_type_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79d077ef-9eed-49d4-8001-75c36bbea675"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"plan_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"priority_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1437d403-f22b-44b5-875d-f58aa9020ad5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"risk_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"round_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50921b2e-bfe3-4804-add9-601ade7a6c72"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"search_area_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14aa684e-3ffd-47f9-9c41-30163815522a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sst_event_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"task_priority_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"738d3640-3fbd-4a5e-aaeb-a085625af812"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"accepts_groups"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="s2">"operation_logs"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_response_timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-12T16:23:56.128+02:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tasks_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">126</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='trackers'>Trackers</h1><h2 id='get-all-trackers'>Get All Trackers</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.sardynamics.com/trackers.json</code></p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/trackers.json"</span>
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
@@ -3556,7 +4088,112 @@ You must replace <code>:operation_id</code> with the corresponding operation id.
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b251aa59-b948-41a0-9f89-d46aba4aa872"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h1 id='triage-location-types'>Triage Location Types</h1><h1 id='triage-status-types'>Triage Status Types</h1><h1 id='triages'>Triages</h1><h1 id='units'>Units</h1><h2 id='get-all-units'>Get All Units</h2><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h1 id='triage-location-types'>Triage Location Types</h1><h2 id='get-all-triage-location-types'>Get All Triage Location Types</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/triage_location_types.json</code></p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/triage_location_types.json"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a82d55b5-44fd-40a7-a713-2ebe2c40c315"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accident Site"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.577Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.577Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9f79dece-fe6c-49f5-898c-e52ee15fd294"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Treatment Area"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.579Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.579Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c4c8d083-9581-4636-be1f-49288b0bea3a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transport"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.585Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.585Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7d22cb6f-e0f6-4166-9a05-65528a1b6bc5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mass Aid Center"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.587Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.587Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"79b3f01d-f34b-4524-b9fb-85ea3c2071fd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hospital"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.589Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.589Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h1 id='triage-status-types'>Triage Status Types</h1><h2 id='get-all-triage-status-types'>Get All Triage Status Types</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/triage_status_types.json</code></p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/triage_status_types.json"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9623c4d4-71c9-4eda-9daa-5a74b706bb29"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#ff2600"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.568Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.568Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7ae14d1c-cc00-4c9b-b8f1-cc802afd8863"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#fffb00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.571Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.571Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8e5d58b8-6568-466e-92cb-f6f1ae605ae5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#5cb85c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.573Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.573Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9a0bd94f-b47b-4704-98cd-470500f17ceb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shareable_triages_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9114ee94-926e-441a-85b2-f3b717321229"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.575Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:05:08.575Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h1 id='triages'>Triages</h1><h1 id='units'>Units</h1><h2 id='get-all-units'>Get All Units</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.sardynamics.com/units.json</code></p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/units.json"</span>
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
