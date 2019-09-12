@@ -6,22 +6,23 @@
 
 ### Available Parameters
 
-| Key              | Type    | Description                         |
-| ---------------- | ------- | ----------------------------------- |
-| skip             | Integer | How many operations to skip         |
-| take             | String  | How many operations to fetch        |
-| category_id      | String  |                                     |
-| call_level_id    | String  |                                     |
-| hide_finished    | Boolean |                                     |
-| priority_id      |         |                                     |
-| regarding_id     |         |                                     |
-| scale_id         |         |                                     |
-| show_hidden      | Boolean |                                     |
-| get_all          | Boolean |                                     |
-| operations_count | Integer |                                     |
-| begin_at         | Date    | DD-MM-YYYY                          |
-| end_at           | Date    | DD-MM-YYYY                          |
-| bounding_box     | String  | [[68.656,-21.521],[69.066,-18.249]] |
+| Key               | Type    | Description                         |
+| ----------------- | ------- | ----------------------------------- |
+| skip              | Integer | How many operations to skip         |
+| take              | Integer | How many operations to fetch        |
+| filter_operations | String  | Search String                       |
+| category_id       | String  |                                     |
+| call_level_id     | String  |                                     |
+| hide_finished     | Boolean |                                     |
+| priority_id       | String  |                                     |
+| regarding_id      | String  |                                     |
+| scale_id          | String  |                                     |
+| show_hidden       | Boolean |                                     |
+| get_all           | Boolean |                                     |
+| operations_count  | Integer |                                     |
+| begin_at          | Date    | DD-MM-YYYY                          |
+| end_at            | Date    | DD-MM-YYYY                          |
+| bounding_box      | String  | [[68.656,-21.521],[69.066,-18.249]] |
 
 ```shell
 curl "https://api.sardynamics.com/all_operations.json"
