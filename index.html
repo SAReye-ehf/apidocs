@@ -265,9 +265,19 @@
           </li>
           <li>
             <a href="#dispatch-groups" class="toc-h1 toc-link" data-title="Dispatch Groups">Dispatch Groups</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-dispatch-groups" class="toc-h2 toc-link" data-title="Get All Dispatch Groups">Get All Dispatch Groups</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#dispatch-response-types" class="toc-h1 toc-link" data-title="Dispatch Response Types">Dispatch Response Types</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-dispatch-response-types" class="toc-h2 toc-link" data-title="Get All Dispatch Response Types">Get All Dispatch Response Types</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#dispatch-responses" class="toc-h1 toc-link" data-title="Dispatch Responses">Dispatch Responses</a>
@@ -300,19 +310,19 @@
             <a href="#issues" class="toc-h1 toc-link" data-title="Issues">Issues</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#create-a-new-issue" class="toc-h2 toc-link" data-title="Create a new issue">Create a new issue</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-issue" class="toc-h2 toc-link" data-title="Delete a Specific Issue">Delete a Specific Issue</a>
+                  </li>
+                  <li>
                     <a href="#get-all-issues" class="toc-h2 toc-link" data-title="Get All Issues">Get All Issues</a>
                   </li>
                   <li>
                     <a href="#get-a-specific-issue" class="toc-h2 toc-link" data-title="Get a Specific Issue">Get a Specific Issue</a>
                   </li>
                   <li>
-                    <a href="#create-a-new-issue" class="toc-h2 toc-link" data-title="Create a new issue">Create a new issue</a>
-                  </li>
-                  <li>
                     <a href="#update-a-specific-issue" class="toc-h2 toc-link" data-title="Update a Specific Issue">Update a Specific Issue</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-issue" class="toc-h2 toc-link" data-title="Delete a Specific Issue">Delete a Specific Issue</a>
                   </li>
               </ul>
           </li>
@@ -345,6 +355,11 @@
           </li>
           <li>
             <a href="#operation-scales" class="toc-h1 toc-link" data-title="Operation Scales">Operation Scales</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-operation-scales" class="toc-h2 toc-link" data-title="Get All Operation Scales">Get All Operation Scales</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#operation-types" class="toc-h1 toc-link" data-title="Operation Types">Operation Types</a>
@@ -540,7 +555,7 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific area.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/areas.json/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -559,9 +574,9 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
 </code></pre>
 <p>This endpoint deletes a specific area.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>DELETE http://example.com/areas/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -707,7 +722,164 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Device"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h1 id='dispatch-groups'>Dispatch Groups</h1><h1 id='dispatch-response-types'>Dispatch Response Types</h1><h1 id='dispatch-responses'>Dispatch Responses</h1><h2 id='get-all-dispatch-responses'>Get All Dispatch Responses</h2><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h1 id='dispatch-groups'>Dispatch Groups</h1><h2 id='get-all-dispatch-groups'>Get All Dispatch Groups</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/dispatch_groups.json</code></p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/dispatch_groups.json"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Division"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-07T11:31:52.836Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-07T11:31:52.836Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1229b512-ce0d-4082-aa42-d241ad65566b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f747ddfa-c6a2-444d-ba9e-f849ea7a5bea"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resources_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00001"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fire Truck 21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T15:32:57.690Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T15:32:57.690Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"on_call"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"url_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"device_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fire Truck"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_time_in_operation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latest_operation_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fire Truck"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c88e1a75-1fd6-4b7a-86ed-273cfe14d88a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number_area_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"call_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custodian_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latest_operation_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenant_user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f747ddfa-c6a2-444d-ba9e-f849ea7a5bea"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"watch_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"inactive_unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:35:35.460Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-27T17:41:34.569Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91844161"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"on_call"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{}"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_time_in_operation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latest_operation_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"441d7391-e14c-4701-bf65-f557dc9593b7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@sareye.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number_area_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+45"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"call_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custodian_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latest_operation_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenant_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c389fa22-8fa1-4b3d-9c55-ab80f894c120"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f747ddfa-c6a2-444d-ba9e-f849ea7a5bea"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"watch_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"inactive_unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emergency Headquarters"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-07T11:32:11.016Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-07T11:32:11.016Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71526340-2352-453f-b7a5-e1eb89f78e5b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8b8a9aa6-681f-4a98-9c8f-81d3ced87c09"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resources_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T13:59:17.553Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-07T11:29:57.044Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 1234 1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"on_call"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vehicle"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{}"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"year"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_time_in_operation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latest_operation_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"device_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tetra"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"inactive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ef906f9c-c1d3-4da7-801b-9bd192438962"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@sareye.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_number_area_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+354"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"call_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"custodian_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latest_operation_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenant_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4245bd51-df24-47d4-b9e5-541add586eec"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8b8a9aa6-681f-4a98-9c8f-81d3ced87c09"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"watch_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"inactive_unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h1 id='dispatch-response-types'>Dispatch Response Types</h1><h2 id='get-all-dispatch-response-types'>Get All Dispatch Response Types</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/dispatch_response_types.json</code></p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/dispatch_response_types.json"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47a9aa18-f574-4a78-901c-20e3bb28975b"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can attend"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"require_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T09:39:40.612Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T09:39:40.612Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54957e36-84dc-48f0-be07-7082f4f7a7aa"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Can not attend"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"require_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T09:40:00.546Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T09:40:00.546Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"91b4705d-c15a-46d0-bac5-66236ad58727"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will attend"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"require_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T09:39:18.026Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-24T09:39:18.026Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h1 id='dispatch-responses'>Dispatch Responses</h1><h2 id='get-all-dispatch-responses'>Get All Dispatch Responses</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.sardynamics.com/dispatch_responses.json</code></p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/dispatch_responses.json"</span>
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
@@ -776,25 +948,25 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbc9580e-fdfd-41f7-ac96-dee91131f64d"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d6af1803-5020-4326-bcf3-017c55ea1ed6"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44a577f8-85b4-4f9f-8ad2-3cb86b983509"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"priority_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe48fc85-603f-4841-bd03-8d760cc7553d"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94a15900-7fe4-4a44-b850-02d66f274485"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T11:16:29.958Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T11:16:29.958Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"resources_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f8fd787c-b350-41f8-b11a-28f40c6c964d"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First responders needed for wilderness rescue."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d6af1803-5020-4326-bcf3-017c55ea1ed6"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44a577f8-85b4-4f9f-8ad2-3cb86b983509"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"priority_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d1f09aed-e591-4a33-85cf-0f7649ed9805"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94a15900-7fe4-4a44-b850-02d66f274485"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-07T13:22:02.773Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-07T13:22:02.773Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T11:20:53.253Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T11:20:53.253Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resources_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbc9580e-fdfd-41f7-ac96-dee91131f64d"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operation managers needed in Control Center"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"operation_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d6af1803-5020-4326-bcf3-017c55ea1ed6"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44a577f8-85b4-4f9f-8ad2-3cb86b983509"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priority_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe48fc85-603f-4841-bd03-8d760cc7553d"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94a15900-7fe4-4a44-b850-02d66f274485"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T11:16:29.958Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-11T11:16:29.958Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resources_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -807,7 +979,82 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 <p>The response to this request is a JSON object structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">
-</span></code></pre><h1 id='issues'>Issues</h1><h2 id='get-all-issues'>Get All Issues</h2><h3 id='available-parameters'>Available Parameters</h3>
+</span></code></pre><h1 id='issues'>Issues</h1><h2 id='create-a-new-issue'>Create a new issue</h2><h3 id='http-request'>HTTP request</h3>
+<p><code>POST http://example.com/issues</code></p>
+<h3 id='parameters'>Parameters</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>issue[name]</td>
+<td>String</td>
+<td>Short description of the issue</td>
+</tr>
+<tr>
+<td>issue[description]</td>
+<td>String</td>
+<td>Explanation of the issue</td>
+</tr>
+<tr>
+<td>issue[issue_type_id]</td>
+<td>String (uuid)</td>
+<td>Type of issue</td>
+</tr>
+<tr>
+<td>issue[solved]</td>
+<td>Boolean</td>
+<td>Has the issue been solved or not</td>
+</tr>
+<tr>
+<td>issue[anonymous]</td>
+<td>Boolean</td>
+<td>Post the issue anonymously</td>
+</tr>
+<tr>
+<td>issue[unit_id]</td>
+<td>String (uuid)</td>
+<td>The unit responsible for the issue</td>
+</tr>
+<tr>
+<td>issue[tag_ids][]</td>
+<td>Array[String (uuid)]</td>
+<td>Assigned tags</td>
+</tr>
+<tr>
+<td>issue[assigned_resource_ids][]</td>
+<td>Array[String (uuid)]</td>
+<td>Resources that are assigned to investigate the issue</td>
+</tr>
+<tr>
+<td>issue[affected_resource_ids][]</td>
+<td>Array[String (uuid)]</td>
+<td>Resources that are affected by the issue</td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-issue'>Delete a Specific Issue</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/issues/27522917-bb28-530e-979d-c4b77a335114"</span>
+  -X DELETE
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<p>This endpoint deletes a specific issue.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>DELETE http://example.com/issues/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the issue to delete</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-issues'>Get All Issues</h2><h3 id='available-parameters'>Available Parameters</h3>
 <table><thead>
 <tr>
 <th>Key</th>
@@ -880,22 +1127,23 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 <p>The response to this request is a JSON object structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-25T13:07:15.283Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-04T14:19:08.239Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"json"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"65 32.000"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-23 04.000"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"has_polygon"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"614ec74c-2749-541a-ab68-e8ccc3da2b26"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecaf17fa-df8b-51e9-b370-9963438b1fb3"</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aee23f75-ead3-5c15-853d-fb27a85ed512"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"issue_type_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ec79e69c-6720-54d0-84e2-bd700704763e"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"anonymous"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"solved"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a8e74080-e8cd-58e3-a881-cb98c4514547"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creator_resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"118f00e0-184f-5744-884b-657eb4b3c1ca"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fb694644-ab61-5564-8f35-ce1d16012715"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48c47225-a6e2-5e66-a415-0a84f93a1808"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T17:59:40.655Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T18:03:14.279Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific issue.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/issues/&lt;ID&gt;.json</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -909,8 +1157,31 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 <td>The ID of the issue to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='create-a-new-issue'>Create a new issue</h2><h3 id='http-request-3'>HTTP request</h3>
-<p><code>POST http://example.com/issues</code></p>
+<h2 id='update-a-specific-issue'>Update a Specific Issue</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/issues/abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+  -X PATCH
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bc2fa047-41ab-4847-9fdf-31e02d2b3e187"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slippery stairs"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"issue_type_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f3129e67-9d93-4654-b250-b76bf5c95c53"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"anonymous"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"solved"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ga200aa8-374d-4c18-12d4-4c49f94a631d"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creator_resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bfd26aa9-4a1c-45e0-af2h-8268b3b38b87"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b333cb95-d1d2-47de-af2h-724518758073"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ad9bf99e-12gv-4abb-af2h-eb9a3b47a2da"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T17:59:40.655Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T18:03:14.279Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>PATCH http://example.com/issues/&lt;ID&gt;</code></p>
 <h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
@@ -963,64 +1234,6 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 <td>issue[affected_resource_ids][]</td>
 <td>Array[String (uuid)]</td>
 <td>Resources that are affected by the issue</td>
-</tr>
-</tbody></table>
-<h2 id='update-a-specific-issue'>Update a Specific Issue</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/issues/abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
-  -X PATCH
-  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
-</code></pre>
-<blockquote>
-<p>The response to this request is a JSON object structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bc2fa047-41ab-4847-9fdf-31e02d2b3e187"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Slippery stairs"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"issue_type_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f3129e67-9d93-4654-b250-b76bf5c95c53"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"anonymous"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"solved"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ga200aa8-374d-4c18-12d4-4c49f94a631d"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"creator_resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bfd26aa9-4a1c-45e0-af2h-8268b3b38b87"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b333cb95-d1d2-47de-af2h-724518758073"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ad9bf99e-12gv-4abb-af2h-eb9a3b47a2da"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T17:59:40.655Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-09T18:03:14.279Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific issue.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>PATCH http://example.com/issues/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the issue to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-issue'>Delete a Specific Issue</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/issues/27522917-bb28-530e-979d-c4b77a335114"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
-</code></pre>
-<p>This endpoint deletes a specific issue.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE http://example.com/issues/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the issue to delete</td>
 </tr>
 </tbody></table>
 <h1 id='kinds'>Kinds</h1><h2 id='get-all-kinds'>Get All Kinds</h2><h3 id='http-request'>HTTP Request</h3>
@@ -1178,7 +1391,57 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
     </span><span class="s2">"resource_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ef906f9c-c1d3-4da7-801b-9bd192438962"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h1 id='operation-logs'>Operation Logs</h1><h1 id='operation-scales'>Operation Scales</h1><h1 id='operation-types'>Operation Types</h1><h2 id='get-all-operation-types'>Get All Operation Types</h2><h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h1 id='operation-logs'>Operation Logs</h1><h1 id='operation-scales'>Operation Scales</h1><h2 id='get-all-operation-scales'>Get All Operation Scales</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/operation_scales.json</code></p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/operation_scales.json?page=1"</span>
+  -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
+</code></pre>
+<blockquote>
+<p>The response to this request is a JSON object structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.677Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.677Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FFFFFF"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0695eebf-f6a4-4f50-a32b-50e1afcc497a"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.658Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.658Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#62c462"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"318d00bb-c933-4ecf-9689-63cb4034809c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.672Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.672Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FF5E5B"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"891d23f3-5920-493f-b575-0e949611ef99"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.667Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-13T16:34:17.667Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"disabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#FAFF5A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"text_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#000000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25a2fe8f-c9d5-4894-b258-bd2bf245cfe0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tenant_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196a0475-6cd1-4f30-b061-caf3e8649c06"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h1 id='operation-types'>Operation Types</h1><h2 id='get-all-operation-types'>Get All Operation Types</h2><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.sardynamics.com/operation_types.json</code></p>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/operation_types.json?page=1"</span>
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
@@ -1224,7 +1487,9 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
     </span><span class="s2">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h1 id='operation-view-history'>Operation View History</h1><h2 id='get-all-operation-views'>Get All Operation Views</h2><h3 id='available-parameters'>Available Parameters</h3>
+</span></code></pre><h1 id='operation-view-history'>Operation View History</h1><h2 id='get-all-operation-views'>Get All Operation Views</h2><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.sardynamics.com/operation_view_history.json</code></p>
+<h3 id='available-parameters'>Available Parameters</h3>
 <table><thead>
 <tr>
 <th>Key</th>
@@ -1253,9 +1518,7 @@ You must replace <code>abbe0983-7b75-53df-bc32-009b79d2c61e</code> with your per
 <td>id of the operation you want to look up (optional)</td>
 </tr>
 </tbody></table>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.sardynamics.com/devices.json</code></p>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/devices.json?page=1"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.sardynamics.com/operation_view_history.json?page=1"</span>
   -H <span class="s2">"Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"</span>
 </code></pre>
 <blockquote>
