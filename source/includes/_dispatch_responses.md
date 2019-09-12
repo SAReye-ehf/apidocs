@@ -2,6 +2,10 @@
 
 ## Get All Dispatch Responses
 
+### HTTP Request
+
+`GET https://api.sardynamics.com/dispatch_responses.json`
+
 ```shell
 curl "https://api.sardynamics.com/dispatch_responses.json"
   -H "Authorization: abbe0983-7b75-53df-bc32-009b79d2c61e"
