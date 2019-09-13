@@ -28,7 +28,7 @@ This endpoint retrieves a specific area.
 
 ### HTTP Request
 
-`GET http://example.com/areas.json/<ID>`
+`GET https://api.sardynamics.com/areas/<ID>.json`
 
 ### URL Parameters
 
